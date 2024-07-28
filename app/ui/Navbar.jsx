@@ -11,16 +11,18 @@ function Navbar() {
       <div>
         <ul className="flex justify-between pl-10 pr-10 pt-4 pb-4 bg-black ">
           <li>
-            <p className="text-white font-bold text-lg p-2 ">
-              Road<span className="text-[#5E17EB]">Ahead</span>
-            </p>
+            <Link href="/">
+              <p className="text-white font-bold text-lg p-2 ">
+                Road<span className="text-[#70ABBB]">Ahead</span>
+              </p>
+            </Link>
           </li>
           <li className="flex pt-1 ">
             <Link
               className={`text-[14px] pr-4 ${
-                pathname === "/map" ? "text-[#5E17EB]" : "text-white"
+                pathname === "/pages/map" ? "text-[#5E17EB]" : "text-white"
               }`}
-              href="/map"
+              href="/pages/map"
             >
               <div className="pl-3 pr-3 pt-2 pb-2 hover:bg-[#302f2f] text-white rounded-full transition duration-300">
                 Map

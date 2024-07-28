@@ -1,4 +1,8 @@
 // `app/dashboard/page.js` is the UI for the `/dashboard` URL
 export default function Page() {
-  return <h1>Hello, Dashboard Page! ,, Hello, Dashboard Page!</h1>;
+  return (
+    <>
+      <h1>page interface</h1>
+    </>
+  );
 }
