@@ -1,3 +1,4 @@
+import Footer from "./ui/Footer";
 import Home from "./ui/Home";
 import Navbar from "./ui/Navbar";
 
@@ -6,6 +7,7 @@ export default function Page() {
     <>
       <Navbar />
       <Home />
+      <Footer />
     </>
   );
 }

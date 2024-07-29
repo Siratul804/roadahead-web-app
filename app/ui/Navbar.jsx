@@ -20,7 +20,7 @@ function Navbar() {
           <li className="flex pt-1 ">
             <Link
               className={`text-[14px] pr-4 ${
-                pathname === "/pages/map" ? "text-[#5E17EB]" : "text-white"
+                pathname === "/pages/map" ? "text-[#70ABBB]" : "text-white"
               }`}
               href="/pages/map"
             >
@@ -30,7 +30,7 @@ function Navbar() {
             </Link>
             <Link
               className={`text-[14px]  pr-4 ${
-                pathname === "/sign-in" ? "text-[#5E17EB]" : "text-white"
+                pathname === "/sign-in" ? "text-[#70ABBB]" : "text-white"
               }`}
               href="/sign-in"
             >
@@ -40,7 +40,7 @@ function Navbar() {
             </Link>
             <Link
               className={` text-[14px] pr-4 pl-1 ${
-                pathname === "/sign-up" ? "text-[#5E17EB]" : "text-white"
+                pathname === "/sign-up" ? "text-[#70ABBB]" : "text-white"
               }`}
               href="/sign-up"
             >

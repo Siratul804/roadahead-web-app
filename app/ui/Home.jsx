@@ -6,8 +6,8 @@ import { PiMapPinSimpleFill } from "react-icons/pi";
 function Home() {
   return (
     <>
-      <section className="bg-black">
-        <div className="lan_one flex justify-around p-[8vh] ">
+      <section className="">
+        <div className="lan_one flex justify-around p-[8vh] bg-black ">
           <div className="pt-[16vh]">
             <p className="text-white font-extrabold	font-serif text-[6vh] p-2 ">
               Go anywhere with <br /> Road
@@ -48,7 +48,54 @@ function Home() {
               width={500}
               height={500}
               alt="RoadImg"
-              className="rounded-sm"
+              className="rounded-md"
+            />
+          </div>
+        </div>
+        <div className="lan_two flex justify-around p-[8vh] bg-white ">
+          <div>
+            <Image
+              src="/drive.png"
+              width={500}
+              height={500}
+              alt="RoadImg"
+              className="rounded-lg"
+            />
+          </div>
+          <div className="pt-[16vh]">
+            <p className="text-black font-extrabold	font-serif text-[6vh] p-2 ">
+              Drive smarter knowing <br /> the best route and <br /> time to go
+            </p>
+            <div className="pt-4">
+              <Link href="/pages/map">
+                <button class="bg-gray-800 hover:bg-black text-slate-100 hover:text-white font-bold py-3 px-4 border border-black rounded-lg w-[18vh] shadow ">
+                  Get Started
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="lan_two flex justify-around p-[8vh] bg-white ">
+          <div className="pt-[16vh]">
+            <p className="text-black font-extrabold	font-serif text-[6vh] p-2 ">
+              Get real-time traffic <br /> information and avoid <br />{" "}
+              congested roads
+            </p>
+            <div className="pt-4">
+              <Link href="/pages/map">
+                <button class="bg-gray-800 hover:bg-black text-slate-100 hover:text-white font-bold py-3 px-4 border border-black rounded-lg w-[18vh] shadow ">
+                  Get Started
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div>
+            <Image
+              src="/modern.png"
+              width={500}
+              height={500}
+              alt="RoadImg"
+              className="rounded-lg"
             />
           </div>
         </div>
