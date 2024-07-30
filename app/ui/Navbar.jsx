@@ -10,16 +10,16 @@ function Navbar() {
     <>
       <div>
         <ul className="flex justify-between pl-10 pr-10 pt-4 pb-4 bg-black ">
-          <li>
-            <Link href="/">
+          <Link href="/">
+            <li>
               <p className="text-white font-bold text-lg p-2 ">
                 Road<span className="text-[#70ABBB]">Ahead</span>
               </p>
-            </Link>
-          </li>
-          <li className="flex pt-1 ">
+            </li>
+          </Link>
+          <li className="flex pt-1  ">
             <Link
-              className={`text-[14px] pr-4 ${
+              className={`text-[14px] ${
                 pathname === "/pages/map" ? "text-[#70ABBB]" : "text-white"
               }`}
               href="/pages/map"
@@ -28,8 +28,9 @@ function Navbar() {
                 Map
               </div>
             </Link>
+            <div className="pl-2 pr-2"></div>
             <Link
-              className={`text-[14px]  pr-4 ${
+              className={`text-[14px] ${
                 pathname === "/sign-in" ? "text-[#70ABBB]" : "text-white"
               }`}
               href="/sign-in"
@@ -38,8 +39,9 @@ function Navbar() {
                 Log in
               </div>
             </Link>
+            <div className="pl-2 pr-2"></div>
             <Link
-              className={` text-[14px] pr-4 pl-1 ${
+              className={` text-[14px] pl-1 ${
                 pathname === "/sign-up" ? "text-[#70ABBB]" : "text-white"
               }`}
               href="/sign-up"
@@ -48,6 +50,7 @@ function Navbar() {
                 Sign up
               </div>
             </Link>
+            <div className="pl-2 pr-2"></div>
           </li>
         </ul>
       </div>

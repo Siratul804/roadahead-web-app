@@ -1,5 +1,11 @@
+import SignIn from "@/app/ui/SignIn";
+
 function page() {
-  return <div>Sign In Page</div>;
+  return (
+    <>
+      <SignIn />
+    </>
+  );
 }
 
 export default page;
