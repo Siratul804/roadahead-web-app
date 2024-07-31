@@ -1,7 +1,9 @@
-export default function Page() {
-  return (
-    <>
-      <h1>Map page</h1>
-    </>
-  );
-}
+import { fetchUsers } from "@/app/lib/data";
+
+const page = async () => {
+  const users = await fetchUsers();
+  console.log(users);
+  return <>Map</>;
+};
+
+export default page;
