@@ -1,9 +1,18 @@
 import SignIn from "@/app/ui/SignIn";
+import { auth } from "@/app/auth";
+async function page() {
+  let user = null;
 
-function page() {
+  try {
+    const authResponse = await auth();
+    user = authResponse.user;
+  } catch (error) {
+    console.log("No user logged in");
+  }
+
   return (
     <>
-      <SignIn />
+      <SignIn user={user} />
     </>
   );
 }
