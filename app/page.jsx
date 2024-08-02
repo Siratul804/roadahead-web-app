@@ -2,7 +2,7 @@ import Footer from "./ui/Footer";
 import Home from "./ui/Home";
 import Navbar from "./ui/Navbar";
 
-export default function Page() {
+export default async function Page() {
   return (
     <>
       <Navbar />

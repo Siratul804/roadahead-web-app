@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { authConfig } from "./authconfig";
+// import { authConfig } from "./authconfig";
 import { connectToDB } from "./lib/utils";
 import { User } from "./lib/models";
 import bcrypt from "bcrypt";
@@ -30,7 +30,7 @@ const login = async (credentials) => {
 };
 
 export const { signIn, signOut, auth } = NextAuth({
-  ...authConfig,
+  // ...authConfig,
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
@@ -48,16 +48,16 @@ export const { signIn, signOut, auth } = NextAuth({
     async jwt({ token, user }) {
       if (user) {
         token.username = user.username;
-        token.img = user.img;
       }
       return token;
     },
     async session({ session, token }) {
       if (token) {
         session.user.username = token.username;
-        session.user.img = token.img;
       }
       return session;
     },
   },
 });
+
+//need to modify this !!!!

@@ -1,10 +1,14 @@
-"use client";
-
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { signOut, auth } from "@/app/auth";
+const Navbar = async () => {
+  let user = null;
 
-function Navbar() {
-  const pathname = usePathname();
+  try {
+    const authResponse = await auth();
+    user = authResponse.user;
+  } catch (error) {
+    console.log("No user logged in");
+  }
 
   return (
     <>
@@ -18,44 +22,46 @@ function Navbar() {
             </li>
           </Link>
           <li className="flex pt-1  ">
-            <Link
-              className={`text-[14px] ${
-                pathname === "/pages/map" ? "text-[#70ABBB]" : "text-white"
-              }`}
-              href="/pages/map"
-            >
+            <Link className="text-[14px] text-white" href="/pages/map">
               <div className="pl-3 pr-3 pt-2 pb-2 hover:bg-[#302f2f] text-white rounded-full transition duration-300">
                 Map
               </div>
             </Link>
-            <div className="pl-2 pr-2"></div>
-            <Link
-              className={`text-[14px] ${
-                pathname === "/sign-in" ? "text-[#70ABBB]" : "text-white"
-              }`}
-              href="/sign-in"
-            >
-              <div className="pl-3 pr-3 pt-2 pb-2 hover:bg-[#302f2f] text-white rounded-full transition duration-300">
-                Log in
-              </div>
-            </Link>
-            <div className="pl-2 pr-2"></div>
-            <Link
-              className={` text-[14px] pl-1 ${
-                pathname === "/sign-up" ? "text-[#70ABBB]" : "text-white"
-              }`}
-              href="/sign-up"
-            >
-              <div className="pl-3 pr-3 pt-2 pb-2 bg-white text-black rounded-full transition duration-300">
-                Sign up
-              </div>
-            </Link>
-            <div className="pl-2 pr-2"></div>
+            {user ? (
+              <>
+                <div className="pl-2 pr-2"></div>
+                <form
+                  action={async () => {
+                    "use server";
+                    await signOut();
+                  }}
+                >
+                  <button className="bg-red-500 rounded-full text-white text-sm p-2">
+                    Logout
+                  </button>
+                </form>
+              </>
+            ) : (
+              <>
+                <div className="pl-2 pr-2"></div>
+                <Link className="text-[14px] text-white" href="/sign-in">
+                  <div className="pl-3 pr-3 pt-2 pb-2 hover:bg-[#302f2f] text-white rounded-full transition duration-300">
+                    Log in
+                  </div>
+                </Link>
+                <div className="pl-2 pr-2"></div>
+                <Link className="text-[14px] text-white" href="/sign-up">
+                  <div className="pl-3 pr-3 pt-2 pb-2 bg-white text-black rounded-full transition duration-300">
+                    Sign up
+                  </div>
+                </Link>
+              </>
+            )}
           </li>
         </ul>
       </div>
     </>
   );
-}
+};
 
 export default Navbar;
