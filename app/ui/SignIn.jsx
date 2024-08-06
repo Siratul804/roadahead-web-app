@@ -13,11 +13,11 @@ function SignIn({ user }) {
 
         {user ? (
           <>
-            <div className="flex items-center justify-center h-screen">
-              <Link href="/">
-                <div className="p-2 bg-white hover:bg-[#eee] rounded-full ">
-                  <TiArrowBack size={32} color="black" />
-                </div>
+            <div className="flex items-center justify-center h-screen flex-col font-mono ">
+              <p className="text-black text-[4vh] "> Successfully Login ! </p>
+
+              <Link href="/" className="py-4">
+                <p className="text-blue-500"> Back to home page</p>
               </Link>
             </div>
           </>

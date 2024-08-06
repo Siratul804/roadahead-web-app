@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { signOut, auth } from "@/app/auth";
+import { auth } from "@/app/auth";
+import { IoIosLogOut } from "react-icons/io";
+
 const Navbar = async () => {
   let user = null;
 
@@ -30,16 +32,12 @@ const Navbar = async () => {
             {user ? (
               <>
                 <div className="pl-2 pr-2"></div>
-                <form
-                  action={async () => {
-                    "use server";
-                    await signOut();
-                  }}
+                <Link
+                  href="/sign-out"
+                  className="hover:bg-[#302f2f] rounded-full text-white text-sm p-2"
                 >
-                  <button className="bg-red-500 rounded-full text-white text-sm p-2">
-                    Logout
-                  </button>
-                </form>
+                  <IoIosLogOut size={22} color="red" />
+                </Link>
               </>
             ) : (
               <>
