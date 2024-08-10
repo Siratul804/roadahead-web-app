@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
+    "axios": "^1.7.3",
     "bcrypt": "^5.1.1",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.2",
