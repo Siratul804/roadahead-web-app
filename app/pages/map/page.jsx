@@ -20,10 +20,10 @@ const page = async () => {
         </>
       ) : (
         <>
-          <div className="flex items-center justify-center h-screen flex-col font-mono ">
-            <h1>Please Login !</h1>
+          <div className="flex items-center justify-center h-screen flex-col font-mono  bg-black ">
+            <h1 className="text-white text-[6vh] ">Please Login !</h1>
 
-            <Link href="/sign-in" className="py-4 text-[10px] ">
+            <Link href="/sign-in" className="py-4 text-[16px] ">
               <p className="text-blue-500"> click here </p>
             </Link>
           </div>
