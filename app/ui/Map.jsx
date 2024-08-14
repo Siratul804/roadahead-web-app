@@ -36,8 +36,8 @@ const Map = () => {
   };
 
   const mapStyles = {
-    height: "70vh",
-    width: "80%",
+    height: "90vh",
+    width: "100%",
   };
 
   const defaultCenter = weather
@@ -65,24 +65,28 @@ const Map = () => {
   };
 
   return (
-    <div className="font-mono bg-black py-10">
-      <form onSubmit={handleSearch} className="flex justify-center">
-        <input
-          className="p-1 rounded-md w-[100vh]"
-          type="text"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          id="search"
-          placeholder="Search Location..."
-        />
-        <div className="grid place-items-center h-full w-12 text-gray-300">
-          <button type="submit">
-            <IoSearch size={28} />
-          </button>
-        </div>
-      </form>
-
-      <div className="flex justify-center p-10  ">
+    <div className="font-mono bg-black ">
+      <section className="relative">
+        <form
+          onSubmit={handleSearch}
+          className="absolute top-10 left-1/2 transform -translate-x-1/2 z-10"
+        >
+          <div className="bg-white p-2 rounded-md flex  ">
+            <input
+              className="p-1 w-[100vh] font-mono focus:outline-none "
+              type="text"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              id="search"
+              placeholder="Search Location..."
+            />
+            <div className="grid place-items-center h-full w-12 text-gray-300">
+              <button type="submit">
+                <IoSearch size={30} color="gray" />
+              </button>
+            </div>
+          </div>
+        </form>
         <LoadScript googleMapsApiKey="AIzaSyDJ_svD6mSoWxMdmEIFIyyppaDU_kdT7To">
           <GoogleMap
             mapContainerStyle={mapStyles}
@@ -92,7 +96,9 @@ const Map = () => {
             <Marker position={defaultCenter} />
           </GoogleMap>
         </LoadScript>
-        <div className="bg-[#70ABBB] shadow-md w-[60vh] ">
+      </section>
+      <div className=" hidden ">
+        <div className="bg-[#70ABBB] shadow-md w-[60vh]  ">
           {weather && (
             <>
               <div
