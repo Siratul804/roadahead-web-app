@@ -96,96 +96,108 @@ const Map = () => {
             <Marker position={defaultCenter} />
           </GoogleMap>
         </LoadScript>
-      </section>
-      <div className=" hidden ">
-        <div className="bg-[#70ABBB] shadow-md w-[60vh]  ">
-          {weather && (
-            <>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  paddingTop: "36px",
-                  color: "white",
-                  fontSize: "22px",
-                }}
-              >
-                <p>{weather.sys.country},</p>
-                <p>{weather.name}</p>
-              </div>
-              <div className="text-center py-4 text-white  ">
-                <h1 className="text-[6vh]">{weather.main.temp}°C</h1>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <FaCloud size={150} color="skyblue" />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  padding: "14px",
-                }}
-              >
-                <div style={{ display: "flex" }}>
-                  <WiHumidity size={26} color="white" />
-                  <p
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      color: "white",
-                    }}
-                  >
-                    {weather.main.humidity}
-                  </p>
+        <div className="absolute bottom-0 left-1 z-10">
+          <div
+            className="bg-[#70ABBB] shadow-md w-[36vh] rounded-lg h-[35vh] "
+            style={{
+              clipPath:
+                "polygon(0% 0%, 100% 0%, 100% 75%, 23% 77%, 3% 87%, 9% 76%, 0 76%)",
+            }}
+          >
+            {weather && (
+              <>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    paddingTop: "10px",
+                    color: "white",
+                    fontSize: "14px",
+                  }}
+                >
+                  <p>{weather.sys.country},</p>
+                  <p>{weather.name}</p>
                 </div>
-                <div style={{ display: "flex" }}>
-                  <FiWind size={26} color="white" />
-                  <p
-                    style={{
-                      marginLeft: "8px",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      color: "white",
-                    }}
-                  >
-                    {weather.wind.speed}
-                    <br />
-                  </p>
+                <div className="text-center py-2 text-white  ">
+                  <h1 className="text-[3vh]">{weather.main.temp}°C</h1>
                 </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  paddingTop: "12px",
-                  color: "white",
-                }}
-              >
-                <b>Condition : </b>{" "}
-                <p style={{ marginLeft: "6px" }}>{weather.weather[0].main}</p>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  padding: "20px",
-                  color: "yellow",
-                  fontWeight: "bold",
-                }}
-              >
-                {trafficMessage}
-              </div>
-            </>
-          )}
+                {/* <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <FaCloud size={120} color="skyblue" />
+                </div> */}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    paddingLeft: "14px",
+                    paddingRight: "14px",
+                  }}
+                >
+                  <div style={{ display: "flex" }}>
+                    <WiHumidity size={22} color="white" />
+                    <p
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        color: "white",
+                        fontSize: "12px",
+                      }}
+                    >
+                      {weather.main.humidity}
+                    </p>
+                  </div>
+                  <div style={{ display: "flex" }}>
+                    <FiWind size={22} color="white" />
+                    <p
+                      style={{
+                        marginLeft: "8px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        color: "white",
+                        fontSize: "12px",
+                      }}
+                    >
+                      {weather.wind.speed}
+                      <br />
+                    </p>
+                  </div>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    paddingTop: "12px",
+                    color: "white",
+                    fontSize: "12px",
+                  }}
+                >
+                  <b>Condition : </b>
+                  <p style={{ marginLeft: "6px" }}>{weather.weather[0].main}</p>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "16px",
+                    color: "yellow",
+                    fontWeight: "bold",
+                    fontSize: "12px",
+                  }}
+                >
+                  {trafficMessage}
+                </div>
+              </>
+            )}
+          </div>
         </div>
-      </div>
+      </section>
+
       <div className="py-10"></div>
     </div>
   );
