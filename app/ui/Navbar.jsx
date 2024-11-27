@@ -29,6 +29,26 @@ const Navbar = async () => {
                 Map
               </div>
             </Link>
+            <a
+              className="text-[14px] text-white"
+              target="_blank"
+              href="https://car-rentals-beta.vercel.app/home"
+            >
+              <div className="pl-3 pr-3 pt-2 pb-2 hover:bg-[#302f2f] text-white rounded-full transition duration-300">
+                Rent Car
+              </div>
+            </a>
+
+            <a
+              className="text-[14px] text-white"
+              href="https://voluble-crisp-63c7a2.netlify.app"
+              target="_blank"
+            >
+              <div className="pl-3 pr-3 pt-2 pb-2 hover:bg-[#302f2f] text-white rounded-full transition duration-300">
+                Food
+              </div>
+            </a>
+
             {user ? (
               <>
                 <div className="pl-2 pr-2"></div>
@@ -38,6 +58,7 @@ const Navbar = async () => {
                 >
                   <IoIosLogOut size={22} color="red" />
                 </Link>
+                <div className="pl-2 pr-2"></div>
               </>
             ) : (
               <>

@@ -17,22 +17,28 @@ function Home() {
               Wanna go outside then hop in, and watch.
             </p>
             <div className="  pt-4  ">
-              <Link href="/pages/map">
+              <a
+                target="_blank"
+                href="https://car-rentals-beta.vercel.app/home"
+              >
                 <div className="bg-white rounded-md w-full pt-3 pb-3 pl-5 pr-5 flex justify-between  ">
-                  <p className="text-slate-400">Enter Location</p>
+                  <p className="text-slate-400">Rent Car</p>
                   <TiLocationArrow size={26} color="black" />
                 </div>
-              </Link>
+              </a>
             </div>
 
             <div className=" relative">
               <div className="border-l-2 border-b-white h-[2vh] ml-4 "></div>
-              <Link href="/pages/map">
+              <a
+                href="https://voluble-crisp-63c7a2.netlify.app"
+                target="_blank"
+              >
                 <div className="bg-white rounded-md w-full pt-3 pb-3 pl-5 pr-5 flex justify-between  ">
-                  <p className="text-slate-400">Enter Destination</p>
+                  <p className="text-slate-400"> Food </p>
                   <PiMapPinSimpleFill size={24} color="black" />
                 </div>
-              </Link>
+              </a>
             </div>
             <div className="pt-4">
               <Link href="/pages/map">

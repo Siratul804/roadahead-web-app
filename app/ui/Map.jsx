@@ -6,6 +6,7 @@ import { IoSearch } from "react-icons/io5";
 import { FaCloud } from "react-icons/fa6";
 import { WiHumidity } from "react-icons/wi";
 import { FiWind } from "react-icons/fi";
+import Link from "next/link";
 
 const Map = () => {
   const [city, setCity] = useState("Dhaka");
@@ -96,9 +97,9 @@ const Map = () => {
             <Marker position={defaultCenter} />
           </GoogleMap>
         </LoadScript>
-        <div className="absolute bottom-0 left-1 z-10">
+        <div className="absolute bottom-0 left-1 z-10 ">
           <div
-            className="bg-[#70ABBB] shadow-md w-[36vh] rounded-lg h-[35vh] "
+            className="bg-[#70ABBB] shadow-md w-[44vh] rounded-lg h-[44vh]  "
             style={{
               clipPath:
                 "polygon(0% 0%, 100% 0%, 100% 75%, 23% 77%, 3% 87%, 9% 76%, 0 76%)",
@@ -121,14 +122,7 @@ const Map = () => {
                 <div className="text-center py-2 text-white  ">
                   <h1 className="text-[3vh]">{weather.main.temp}°C</h1>
                 </div>
-                {/* <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <FaCloud size={120} color="skyblue" />
-                </div> */}
+
                 <div
                   style={{
                     display: "flex",
